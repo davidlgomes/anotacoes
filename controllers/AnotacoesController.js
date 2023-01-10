@@ -1,15 +1,13 @@
 class AnotacoesController {
-    constructor(){
-        this.array_anotacoes=new Array();
-    }
-    function() {
-        const form = document.querySelector('form');
-        form.addEventListener('submit', (e) => {
-            const note = new Anotacoes(document.getElementById('titulo').value, document.getElementById('descricaoTarefa').value)
-            console.log(note)
-            array_anotacoes.push(form)
-            e.preventDefault()
-        });
-        return 0;
+    constructor() {
+        this.array_anotacoes = new Array();
     }
 }
+const form = document.querySelector('form');
+anotacoesController=new AnotacoesController();
+form.addEventListener('submit', (e) => {
+    const note = new Anotacoes(document.getElementById('titulo').value, document.getElementById('descricaoTarefa').value)
+    anotacoesController.array_anotacoes.push(note)
+    console.log(anotacoesController.array_anotacoes)
+    e.preventDefault()
+});
